@@ -1,6 +1,7 @@
 #! /bin/sh
 
-rm -rf ../compiled/*
+mkdir -p export
+rm -rf export/*
 
 root=$PWD
 
@@ -10,8 +11,8 @@ do
   echo "** exporting \"$map.sky\" **"
 
   cd src/$map
-  7z a $root/compiled/$map.zip *
+  7z a $root/export/$map.zip *
   cd $root
 
-  mv compiled/$map.zip compiled/$map.sky
+  mv export/$map.zip export/$map.sky
 done
