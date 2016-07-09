@@ -10,9 +10,10 @@ for map in *
 do
   echo "** exporting \"$map.sky\" **"
 
-  cd src/$map
+  cd $root/src/$map
   7z a $root/export/$map.zip *
-  cd $root
 
-  mv export/$map.zip export/$map.sky
+  cd $root/export
+  mv $map.zip $map.sky
+
 done
